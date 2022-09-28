@@ -1,0 +1,31 @@
+\documentclass[twoside]{article}
+\usepackage{fontspec}
+\setmainfont{Exo 2}
+\usepackage[paperheight=5cm,paperwidth=9cm,margin=0cm,heightrounded,showframe]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\definecolor{primary}{HTML}{7CBF56}
+\definecolor{secondary}{HTML}{748699}
+\definecolor{accent}{HTML}{003A70}
+\definecolor{alert}{HTML}{DA291C}
+\definecolor{onPrimary}{HTML}{000103}
+\definecolor{onSecondary}{HTML}{FEFEFE}
+
+\begin{document}
+  \noindent
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.south east) + (-8, 0)$);
+    \draw[draw opacity=0, fill=accent] ($(current page.north west)+(8,0)$) rectangle ($(current page.south east) + (-8, 0)$);
+    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.south east) + (-8, 0)$);
+    \node[opacity=1] (logo) at (current page.center)
+      {\includegraphics[height=.7\paperheight]{images/logo_RobSIC_full}};
+
+%       \fill[color=primary] (0,2.125) rectangle (0.2\paperwidth,\the\paperheight);
+%       \fill[color=accent] (0,2.15) rectangle(\the\paperwidth,2);
+%       \fill[color=secondary] (0,0) rectangle(0.2\paperwidth,2);
+%       \node (logoUnifei) at (1.6,1)
+%       {\includegraphics[width=.07\paperwidth]{images/simbolo_RGB}};
+\end{tikzpicture}
+
+\end{document}
