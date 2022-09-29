@@ -16,8 +16,6 @@
 \newcommand{\cargo}{Pesquisador/Researcher}
 \newcommand{\email}{wendelldiniz@unifei.edu.br}
 
-\include{preamble.tex}
-
 \definecolor{primary}{HTML}{7CBF56}
 \definecolor{secondary}{HTML}{748699}
 \definecolor{accent}{HTML}{003A70}
@@ -44,7 +42,7 @@
     \draw[draw opacity=0, fill=secondary] ($(current page.north east)+(-1,0)$) rectangle ($(current page.south east) + (-1.25, 0)$);
     \draw[draw opacity=0, fill=primary] (current page.north east) rectangle ($(current page.south east) + (-1, 0)$);
     \node[opacity=1] (logo) at (current page.center)
-      {\includegraphics[height=.7\paperheight]{images/logo_RobSIC_full}};
+      {\includegraphics[height=.7\paperheight]{images/logo_RobSIC}};
 
   \end{tikzpicture}
 
@@ -57,17 +55,19 @@
 %   \draw[semithick,brown!50]   (current page.north west) grid[step= 5mm] (current page.south east);
 %   \draw[    thick,brown!75]   (current page.north west) grid[step=10mm] (current page.south east);
 
-    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.north west) + (0.25, -1.9)$);
+    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.north west) + (0.25, -2)$);
 
-    \node[ptext] (nome) at ($(current page.north west) + (.5, -.5)$) {\textbf{\nome}};
+    \node[ptext-sm] (nome) at ($(current page.north west) + (.5, 0)$) {{\includegraphics[height=1cm]{images/logo_RobSIC_full_hor}}};
 
-    \node[stext] (função) at ($(current page.north west)+(.5, -.9)$) {\small{\cargo}};
+    \node[ptext] (nome) at ($(current page.north west) + (.5, -1.1)$) {\textbf{\nome}};
+
+    \node[stext] (função) at ($(current page.north west)+(.5, -1.5)$) {\small{\cargo}};
 
     \node[ptext-sm] (location) at ($(current page.south west) + (.5, 1)$) {\hskip.8mm\faMapMarker\;\,\textcolor{secondary}{Campus Itabira, MG}};
 
     \node[ptext-sm] (email) at ($(current page.south west) + (.5, 1.4)$){\faEnvelope\;\textcolor{secondary}{\email}};
 
-    \node[ptext-sm] (site) at ($(current page.south west) + (.5, 1.8)$){\faGlobe\;\textcolor{secondary}{http://robsic.unifei.edu.br}};
+    \node[ptext-sm] (site) at ($(current page.south west) + (.5, 1.8)$){\faGlobe\;\textcolor{secondary}{https://robsic.unifei.edu.br}};
 
     \node[ptext-sm] (phone) at ($(current page.south west) + (.5, 2.2)$){\faPhone\;\textcolor{secondary}{+55 (31) 3839-0800}};
 
