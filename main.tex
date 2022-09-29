@@ -1,9 +1,13 @@
-\documentclass[twoside]{article}
+\documentclass[10pt, twoside]{article}
 \usepackage{fontspec}
-\setmainfont{Exo 2}
+  \setmainfont{Exo 2}
+  \defaultfontfeatures{
+      Path = /usr/local/texlive/2022/texmf-dist/fonts/opentype/public/fontawesome/ }
+\usepackage{fontawesome}
 \usepackage[paperheight=5cm,paperwidth=9cm,margin=0cm,heightrounded,showframe]{geometry}
 \usepackage{tikz}
-\usetikzlibrary{calc}
+  \usetikzlibrary{calc, positioning}
+\usepackage{qrcode}
 
 \definecolor{primary}{HTML}{7CBF56}
 \definecolor{secondary}{HTML}{748699}
@@ -12,20 +16,53 @@
 \definecolor{onPrimary}{HTML}{000103}
 \definecolor{onSecondary}{HTML}{FEFEFE}
 
+\tikzstyle{ptext}=[text=primary, anchor=north west]
+\tikzstyle{stext}=[text=secondary, anchor=north west]
+\tikzstyle{ptext-sm}=[text=primary, anchor=north west, font=\small]
+\tikzstyle{stext-sm}=[text=primary, anchor=north west, font=\small]
+
 \begin{document}
+
   \noindent
+
   \begin{tikzpicture}[remember picture, overlay]
+
     \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.south west) + (1, 0)$);
     \draw[draw opacity=0, fill=secondary] ($(current page.north west)+(1,0)$) rectangle ($(current page.south west) + (1.25, 0)$);
     \draw[draw opacity=0, fill=secondary] ($(current page.north east)+(-1,0)$) rectangle ($(current page.south east) + (-1.25, 0)$);
     \draw[draw opacity=0, fill=primary] (current page.north east) rectangle ($(current page.south east) + (-1, 0)$);
     \node[opacity=1] (logo) at (current page.center)
       {\includegraphics[height=.7\paperheight]{images/logo_RobSIC_full}};
-  \end{tikzpicture}
-  \newpage
-  \begin{tikzpicture}[remember picture, overlay]
-    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.south west) + (0.1, 2)$);
+
   \end{tikzpicture}
 
+  \newpage
+
+  \begin{tikzpicture}[remember picture, overlay]
+
+  % grid - for debugging
+%   \draw[     thin,brown!25]   (current page.north west) grid[step= 1mm] (current page.south east);
+%   \draw[semithick,brown!50]   (current page.north west) grid[step= 5mm] (current page.south east);
+%   \draw[    thick,brown!75]   (current page.north west) grid[step=10mm] (current page.south east);
+
+    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.north west) + (0.25, -1.9)$);
+
+    \node[ptext] (nome) at ($(current page.north west) + (.5, -.5)$) {\textbf{Wendell Fioravante da Silva Diniz}};
+
+    \node[stext] (função) at ($(current page.north west)+(.5, -.9)$) {\small{Pesquisador/Researcher}};
+
+    \node[ptext-sm] (location) at ($(current page.south west) + (.5, 1)$) {\hskip.8mm\faMapMarker\;\,\textcolor{secondary}{Campus Itabira, MG}};
+
+    \node[ptext-sm] (email) at ($(current page.south west) + (.5, 1.4)$){\faEnvelope\;\textcolor{secondary}{wendelldiniz@unifei.edu.br}};
+
+    \node[ptext-sm] (site) at ($(current page.south west) + (.5, 1.8)$){\faGlobe\;\textcolor{secondary}{http://robsic.unifei.edu.br}};
+
+    \node[ptext-sm] (phone) at ($(current page.south west) + (.5, 2.2)$){\faPhone\;\textcolor{secondary}{+55 (31) 3839-0800}};
+
+    \node[anchor=north west] (unifei) at ($(current page.south east) + (-2.75, 1.3)$){\includegraphics[height=.6cm]{images/assin_hor_RGB_pos}};
+
+    \node[anchor=north west, text=primary] (qrc) at ($(current page.south east) + (-2.75, 3.6)$) {\qrcode[hyperlink, height=2cm]{https://goo.gl/maps/SjB9Ur6KWzaTb8gB9}};
+
+  \end{tikzpicture}
 
 \end{document}
