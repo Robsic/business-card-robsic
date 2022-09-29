@@ -9,6 +9,15 @@
   \usetikzlibrary{calc, positioning}
 \usepackage{qrcode}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Preencha com seus dados
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nome}{Wendell Fioravante da Silva Diniz}
+\newcommand{\cargo}{Pesquisador/Researcher}
+\newcommand{\email}{wendelldiniz@unifei.edu.br}
+
+\include{preamble.tex}
+
 \definecolor{primary}{HTML}{7CBF56}
 \definecolor{secondary}{HTML}{748699}
 \definecolor{accent}{HTML}{003A70}
@@ -20,6 +29,9 @@
 \tikzstyle{stext}=[text=secondary, anchor=north west]
 \tikzstyle{ptext-sm}=[text=primary, anchor=north west, font=\small]
 \tikzstyle{stext-sm}=[text=primary, anchor=north west, font=\small]
+
+% \cargo{Pesquisador}
+% \email{wendelldiniz@unifei.edu.br}
 
 \begin{document}
 
@@ -47,13 +59,13 @@
 
     \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.north west) + (0.25, -1.9)$);
 
-    \node[ptext] (nome) at ($(current page.north west) + (.5, -.5)$) {\textbf{Wendell Fioravante da Silva Diniz}};
+    \node[ptext] (nome) at ($(current page.north west) + (.5, -.5)$) {\textbf{\nome}};
 
-    \node[stext] (função) at ($(current page.north west)+(.5, -.9)$) {\small{Pesquisador/Researcher}};
+    \node[stext] (função) at ($(current page.north west)+(.5, -.9)$) {\small{\cargo}};
 
     \node[ptext-sm] (location) at ($(current page.south west) + (.5, 1)$) {\hskip.8mm\faMapMarker\;\,\textcolor{secondary}{Campus Itabira, MG}};
 
-    \node[ptext-sm] (email) at ($(current page.south west) + (.5, 1.4)$){\faEnvelope\;\textcolor{secondary}{wendelldiniz@unifei.edu.br}};
+    \node[ptext-sm] (email) at ($(current page.south west) + (.5, 1.4)$){\faEnvelope\;\textcolor{secondary}{\email}};
 
     \node[ptext-sm] (site) at ($(current page.south west) + (.5, 1.8)$){\faGlobe\;\textcolor{secondary}{http://robsic.unifei.edu.br}};
 
