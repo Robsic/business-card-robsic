@@ -1,5 +1,13 @@
 \documentclass[10pt, twoside]{article}
 \usepackage{fontspec}
+% \usepackage{luacode}
+% \begin{luacode}
+% local function embedfull(tfmdata)
+%     tfmdata.embedding = "full"
+% end
+% 
+% luatexbase.add_to_callback("luaotfload.patch_font", embedfull, "embedfull")
+% \end{luacode}
   \setmainfont{Exo 2}
   \defaultfontfeatures{
       Path = /usr/local/texlive/2022/texmf-dist/fonts/opentype/public/fontawesome/ }
@@ -16,12 +24,10 @@
 \newcommand{\cargo}{Pesquisador/Researcher}
 \newcommand{\email}{wendelldiniz@unifei.edu.br}
 
-\definecolor{primary}{HTML}{7CBF56}
-\definecolor{secondary}{HTML}{748699}
-\definecolor{accent}{HTML}{003A70}
-\definecolor{alert}{HTML}{DA291C}
-\definecolor{onPrimary}{HTML}{000103}
-\definecolor{onSecondary}{HTML}{FEFEFE}
+\definecolor{primary}{HTML}{6CC24A} % Cor primária, Pantone 360C
+\definecolor{secondary}{HTML}{6E7CA0} % Cor secundária, Pantone 7667 C
+\definecolor{accent}{HTML}{003A70} % Cor primária Unifei, Pantone 654 C
+\definecolor{alert}{HTML}{DA291C} % Cor secundária Unifei, Pantone 485 C
 
 \tikzstyle{ptext}=[text=primary, anchor=north west]
 \tikzstyle{stext}=[text=secondary, anchor=north west]
@@ -36,7 +42,6 @@
   \noindent
 
   \begin{tikzpicture}[remember picture, overlay]
-
     \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.south west) + (1, 0)$);
     \draw[draw opacity=0, fill=secondary] ($(current page.north west)+(1,0)$) rectangle ($(current page.south west) + (1.25, 0)$);
     \draw[draw opacity=0, fill=secondary] ($(current page.north east)+(-1,0)$) rectangle ($(current page.south east) + (-1.25, 0)$);
