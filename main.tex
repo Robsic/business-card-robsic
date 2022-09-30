@@ -8,9 +8,23 @@
 % 
 % luatexbase.add_to_callback("luaotfload.patch_font", embedfull, "embedfull")
 % \end{luacode}
-  \setmainfont{Exo 2}
+
+% Configurando a fonte principal
+  \setmainfont{Exo2-Regular.ttf}[
+    Path     = ./font/static/ ,
+    BoldFont = Exo2-Bold.ttf ,
+    ]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modifique o caminho abaixo para apontar o local onde o pacote fontawesome está instalado
+% O caminho abaixo corresponde à instalação da distribuição TexLive no Linux
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
   \defaultfontfeatures{
       Path = /usr/local/texlive/2022/texmf-dist/fonts/opentype/public/fontawesome/ }
+      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{fontawesome}
 \usepackage[paperheight=5cm,paperwidth=9cm,margin=0cm,heightrounded,showframe]{geometry}
 \usepackage{tikz}
@@ -21,9 +35,9 @@
 %% Preencha com seus dados
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\nome}{Wendell Fioravante da Silva Diniz}
-\newcommand{\cargo}{Pesquisador/Researcher}
-\newcommand{\email}{wendelldiniz@unifei.edu.br}
+\newcommand{\nome}{Seu nome completo}
+\newcommand{\cargo}{Ocupação no RobSIC}
+\newcommand{\email}{seuemail@unifei.edu.br}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -42,8 +56,6 @@
 % }
 
 \begin{document}
-
-  \noindent
 
   \begin{tikzpicture}[remember picture, overlay]
 
@@ -69,7 +81,7 @@
     \node[opacity=1] (logo) at ($(current page.center) + (.1, .75)$)
         {\includegraphics[height=3cm]{images/logo_RobSIC}};
         
-    \node[anchor=south east, text=primary, label={[anchor=center, fill=white, text=primary, scale=.9]center:{AR}}] (qrc) at ($(current page.south east) + (-.13, .13)$) {\qrcode[hyperlink, height=2cm]{Site AR}};
+    \node[anchor=south east, text=primary, label={[anchor=center, fill=white, text=primary, scale=.9]center:{AR}}] (qrc) at ($(current page.south east) + (-.13, .13)$) {\includegraphics[height=2cm]{images/ar-qrcode}};
 
   \end{tikzpicture}
 
