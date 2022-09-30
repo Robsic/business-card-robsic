@@ -34,9 +34,6 @@
 \tikzstyle{ptext-sm}=[text=primary, anchor=north west, font=\small]
 \tikzstyle{stext-sm}=[text=primary, anchor=north west, font=\small]
 
-% \cargo{Pesquisador}
-% \email{wendelldiniz@unifei.edu.br}
-
 \begin{document}
 
   \noindent
@@ -78,7 +75,7 @@
 
     \node[anchor=north west] (unifei) at ($(current page.south east) + (-2.75, 1.3)$){\includegraphics[height=.6cm]{images/assin_hor_RGB_pos}};
 
-    \node[anchor=north west, text=primary] (qrc) at ($(current page.south east) + (-2.75, 3.6)$) {\qrcode[hyperlink, height=2cm]{https://goo.gl/maps/SjB9Ur6KWzaTb8gB9}};
+    \node[anchor=north west, text=primary, label={[anchor=center, fill=white, text=primary, scale=.9]center:{\faMap}}] (qrc) at ($(current page.south east) + (-2.75, 3.6)$) {\qrcode[hyperlink, height=2cm]{https://goo.gl/maps/SjB9Ur6KWzaTb8gB9}};
 
   \end{tikzpicture}
 
