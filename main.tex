@@ -20,29 +20,43 @@
 \definecolor{secondary}{HTML}{748699}
 \definecolor{accent}{HTML}{003A70}
 \definecolor{alert}{HTML}{DA291C}
-\definecolor{onPrimary}{HTML}{000103}
-\definecolor{onSecondary}{HTML}{FEFEFE}
 
 \tikzstyle{ptext}=[text=primary, anchor=north west]
 \tikzstyle{stext}=[text=secondary, anchor=north west]
 \tikzstyle{ptext-sm}=[text=primary, anchor=north west, font=\small]
 \tikzstyle{stext-sm}=[text=primary, anchor=north west, font=\small]
 
-% \cargo{Pesquisador}
-% \email{wendelldiniz@unifei.edu.br}
-
+% \newcommand\DrawControl[3]{
+%   node[#2,circle,fill=#2,inner sep=2pt,label={above:$#1$},label={[black]below:{\footnotesize#3}}] at #1 {}
+% }
 \begin{document}
 
   \noindent
 
   \begin{tikzpicture}[remember picture, overlay]
+  % grid - for debugging
+%   \draw[     thin,brown!25]   (current page.north west) grid[step= 1mm] (current page.south east);
+%   \draw[semithick,brown!50]   (current page.north west) grid[step= 5mm] (current page.south east);
+%   \draw[    thick,brown!75]   (current page.north west) grid[step=10mm] (current page.south east);
+  
+    \draw[fill=secondary, draw opacity=0]
+      (current page.north west) coordinate (A)
+        --+(2,0) coordinate (B) .. controls +(-1.75, -2) and (2, -2)
+        ..+(3,-5) coordinate (C)
+        -- (current page.south west) coordinate (D)
+        -- (A); %\DrawControl{(-2, -2)}{blue}{}\DrawControl{(2, -2)}{blue}{};
+        
+    \draw[fill=primary, draw opacity=0]
+      (current page.north west) coordinate (A)
+        --+(1.5,0) coordinate (B) .. controls +(-1.75, -2) and (2, -2)
+        ..+(2.,-5) coordinate (C)
+        -- (current page.south west) coordinate (D)
+        -- (A); %\DrawControl{(-2, -2)}{blue}{}\DrawControl{(2, -2)}{blue}{};
 
-    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.south west) + (1, 0)$);
-    \draw[draw opacity=0, fill=secondary] ($(current page.north west)+(1,0)$) rectangle ($(current page.south west) + (1.25, 0)$);
-    \draw[draw opacity=0, fill=secondary] ($(current page.north east)+(-1,0)$) rectangle ($(current page.south east) + (-1.25, 0)$);
-    \draw[draw opacity=0, fill=primary] (current page.north east) rectangle ($(current page.south east) + (-1, 0)$);
-    \node[opacity=1] (logo) at (current page.center)
-      {\includegraphics[height=.7\paperheight]{images/logo_RobSIC}};
+    \node[opacity=1] (logo) at ($(current page.center) + (.1, .75)$)
+        {\includegraphics[height=3cm]{images/logo_RobSIC}};
+        
+    \node[anchor=south east, text=primary] (qrc) at ($(current page.south east) + (-.25, .25)$) {\qrcode[hyperlink, height=2cm]{Site AR}};
 
   \end{tikzpicture}
 
@@ -63,17 +77,17 @@
 
     \node[stext] (função) at ($(current page.north west)+(.5, -1.5)$) {\small{\cargo}};
 
-    \node[ptext-sm] (location) at ($(current page.south west) + (.5, 1)$) {\hskip.8mm\faMapMarker\;\,\textcolor{secondary}{Campus Itabira, MG}};
+    \node[ptext-sm] (location) at ($(current page.south west) + (.5, 0.8)$) {\hskip.8mm\faMapMarker\;\,\textcolor{secondary}{Campus Itabira, MG}};
 
-    \node[ptext-sm] (email) at ($(current page.south west) + (.5, 1.4)$){\faEnvelope\;\textcolor{secondary}{\email}};
+    \node[ptext-sm] (email) at ($(current page.south west) + (.5, 1.2)$){\faEnvelope\;\textcolor{secondary}{\email}};
 
-    \node[ptext-sm] (site) at ($(current page.south west) + (.5, 1.8)$){\faGlobe\;\textcolor{secondary}{https://robsic.unifei.edu.br}};
+    \node[ptext-sm] (site) at ($(current page.south west) + (.5, 1.6)$){\faGlobe\;\textcolor{secondary}{https://robsic.unifei.edu.br}};
 
-    \node[ptext-sm] (phone) at ($(current page.south west) + (.5, 2.2)$){\faPhone\;\textcolor{secondary}{+55 (31) 3839-0800}};
+    \node[ptext-sm] (phone) at ($(current page.south west) + (.5, 2)$){\faPhone\;\textcolor{secondary}{+55 (31) 3839-0800}};
 
-    \node[anchor=north west] (unifei) at ($(current page.south east) + (-2.75, 1.3)$){\includegraphics[height=.6cm]{images/assin_hor_RGB_pos}};
+    \node[anchor=north west] (unifei) at ($(current page.south east) + (-2.75, 1.)$){\includegraphics[height=.6cm]{images/assin_hor_RGB_pos}};
 
-    \node[anchor=north west, text=primary] (qrc) at ($(current page.south east) + (-2.75, 3.6)$) {\qrcode[hyperlink, height=2cm]{https://goo.gl/maps/SjB9Ur6KWzaTb8gB9}};
+    \node[anchor=north west, text=primary, label={[anchor=center, fill=white, text=primary, scale=.9]center:{\faMap}}] (qrc) at ($(current page.south east) + (-2.75, 3.25)$) {\qrcode[hyperlink, height=2cm]{https://goo.gl/maps/SjB9Ur6KWzaTb8gB9}};
 
   \end{tikzpicture}
 
