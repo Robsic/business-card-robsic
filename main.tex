@@ -69,7 +69,7 @@
     \node[opacity=1] (logo) at ($(current page.center) + (.1, .75)$)
         {\includegraphics[height=3cm]{images/logo_RobSIC}};
         
-    \node[anchor=south east, text=primary] (qrc) at ($(current page.south east) + (-.25, .25)$) {\qrcode[hyperlink, height=2cm]{Site AR}};
+    \node[anchor=south east, text=primary] (qrc) at ($(current page.south east) + (-.13, .13)$) {\qrcode[hyperlink, height=2cm]{Site AR}};
 
   \end{tikzpicture}
 
@@ -82,25 +82,31 @@
 %   \draw[semithick,brown!50]   (current page.north west) grid[step= 5mm] (current page.south east);
 %   \draw[    thick,brown!75]   (current page.north west) grid[step=10mm] (current page.south east);
 
-    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.north west) + (0.25, -2)$);
+    \draw[draw opacity=0, fill=primary] (current page.north west) rectangle ($(current page.north west) + (0.25, -2.2)$);
 
-    \node[ptext-sm] (nome) at ($(current page.north west) + (.5, 0)$) {{\includegraphics[height=1cm]{images/logo_RobSIC_full_hor}}};
+    \node[ptext-sm] (nome) at ($(current page.north west) + (.37, -.13)$) {{\includegraphics[height=1cm]{images/logo_RobSIC_full_hor}}};
 
-    \node[ptext] (nome) at ($(current page.north west) + (.5, -1.1)$) {\textbf{\nome}};
+    \node[ptext] (nome) at ($(current page.north west) + (.37, -1.25)$) {\textbf{\nome}};
 
-    \node[stext] (função) at ($(current page.north west)+(.5, -1.5)$) {\small{\cargo}};
+    \node[stext] (função) at ($(current page.north west)+(.37, -1.625)$) {\small{\cargo}};
 
-    \node[ptext-sm] (location) at ($(current page.south west) + (.5, 0.8)$) {\hskip.8mm\faMapMarker\;\,\textcolor{secondary}{Campus Itabira, MG}};
+    \node[ptext-sm] (location) at ($(current page.south west) + (.37, 0.65)$) {\hskip.75mm\faMapMarker\;\,\textcolor{secondary}{Campus Itabira, MG}};
 
-    \node[ptext-sm] (email) at ($(current page.south west) + (.5, 1.2)$){\faEnvelope\;\textcolor{secondary}{\email}};
+    \node[ptext-sm] (email) at ($(current page.south west) + (.37, 1.05)$){\faEnvelope\;\textcolor{secondary}{\email}};
 
-    \node[ptext-sm] (site) at ($(current page.south west) + (.5, 1.6)$){\faGlobe\;\textcolor{secondary}{https://robsic.unifei.edu.br}};
+    \node[ptext-sm] (site) at ($(current page.south west) + (.37, 1.45)$){\faGlobe\;\textcolor{secondary}{https://robsic.unifei.edu.br}};
 
-    \node[ptext-sm] (phone) at ($(current page.south west) + (.5, 2)$){\faPhone\;\textcolor{secondary}{+55 (31) 3839-0800}};
+    \node[ptext-sm] (phone) at ($(current page.south west) + (.37, 1.85)$){\faPhone\;\textcolor{secondary}{+55 (31) 3839-0800}};
 
-    \node[anchor=north west] (unifei) at ($(current page.south east) + (-2.75, 1.)$){\includegraphics[height=.6cm]{images/assin_hor_RGB_pos}};
+    \node[anchor=north west] (unifei) at ($(current page.north east) + (-2.75, -.27)$){\includegraphics[height=.7cm]{images/assin_hor_RGB_pos}};
 
-    \node[anchor=north west, text=primary, label={[anchor=center, fill=white, text=primary, scale=.9]center:{\faMap}}] (qrc) at ($(current page.south east) + (-2.75, 3.25)$) {\qrcode[hyperlink, height=2cm]{https://goo.gl/maps/SjB9Ur6KWzaTb8gB9}};
+    \node[anchor=south east, text=primary, label={[anchor=center, fill=white, text=primary, scale=.9]center:{\faMap}}] (qrc) at ($(current page.south east) + (-.13, .13)$) {\qrcode[hyperlink, height=2cm]{https://goo.gl/maps/SjB9Ur6KWzaTb8gB9}};
+    
+%     \draw[draw=red] ($(current page.north west) + (.25, -.25)$) rectangle ($(current page.south east) + (-.25, .25)$);
+%     
+%     \draw[draw=red] ($(current page.north west) + (.5, -.5)$) rectangle ($(current page.south east) + (-.5, .5)$);
+%     
+%     \draw[draw=red] ($(current page.north west) + (.75, -.75)$) rectangle ($(current page.south east) + (-.75, .75)$);
 
   \end{tikzpicture}
 
